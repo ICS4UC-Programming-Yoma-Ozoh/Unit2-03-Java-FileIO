@@ -23,12 +23,13 @@ public final class FileIO {
      */
     public static void main(final String[] args) {
         File inputFile = new File("Unit2-03-input.txt");
-        try (FileWriter writer = new FileWriter("output.txt")) {
-                Scanner scanner = new Scanner(inputFile);
-            if (!inputFile.exists()) {
-                System.out.println("Input file not found.");
-                return;
-            }
+        if (!inputFile.exists()) {
+            System.out.println("Input file not found.");
+            return;
+        }
+
+        try (FileWriter writer = new FileWriter("output.txt");
+             Scanner scanner = new Scanner(inputFile)) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine().trim();
                 int sum = 0;
