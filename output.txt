@@ -1,0 +1,8 @@
+55
+No numbers
+-1
+30
+0
+Error: Invalid number format
+Error: Invalid number format
+64
